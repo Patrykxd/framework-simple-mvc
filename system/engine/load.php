@@ -12,13 +12,13 @@ class SystemEngineLoad {
         $path = '';
 
         $path = str_replace(DS, '/', $filePath);
-//        var_dump($path);
-        $filePath = BASE_PATH . "view" . DS . $path . ".php";
+
+        $filePath = ".." . DS . "view" . DS . $path . ".php";
 
         $this->load = NULL;
         if (file_exists($filePath)) {
             extract($variables);
-            
+
             ob_start();
             include $filePath;
             $this->load = ob_get_contents();
@@ -40,7 +40,7 @@ class SystemEngineLoad {
             $path = $filePath;
         }
 
-        include_once BASE_PATH . "model" . $path;
+        include_once "model" . $path;
     }
 
 }
