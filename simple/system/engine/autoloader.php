@@ -1,6 +1,6 @@
 <?php
 
-
+namespace Engine;
 
 class AutoLoad {
 
@@ -8,19 +8,18 @@ class AutoLoad {
 
     public function LoadClass($classNameToFile) {
         foreach (str_split($classNameToFile) as $pos => $element) {
-            
             if (ctype_upper($element) && $pos != 0) {
-                $this->classpath .= DIRECTORY_SEPARATOR . strtolower($element);
+                $this->classpath .= DS . strtolower($element);
             } else {
                 $this->classpath .= strtolower($element);
             }
         }
-        include_once  "../".$this->classpath . ".php";
+        include_once '..' . DS . $this->classpath . ".php";
     }
 
 }
 
 spl_autoload_register(function ($name) {
-    $auto = new AutoLoad();
+    $auto = new \Engine\AutoLoad();
     $auto->LoadClass($name);
 });

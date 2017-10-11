@@ -1,6 +1,6 @@
 <?
 
-use Controller\Core;
+use system\core;
 
 class ControllerError {
 
@@ -9,7 +9,7 @@ class ControllerError {
     }
 
     public function index() {
-        ControllerCore::view(SystemEngineLoad::view("frontend/includes/error404"));
+        SystemCore::view(SystemEngineLoad::view("frontend/includes/error404"));
     }
 
 }
