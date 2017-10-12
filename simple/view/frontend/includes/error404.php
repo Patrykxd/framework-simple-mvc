@@ -1,1 +1,1 @@
-<section>kurwa ERROR!!</section>
+<section>ERROR 404</section>

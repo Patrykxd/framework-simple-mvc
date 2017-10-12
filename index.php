@@ -1,4 +1,5 @@
 <?
+
 define("DS", DIRECTORY_SEPARATOR);
 
 include_once "system" . DS . "config" . DS . "config.php";

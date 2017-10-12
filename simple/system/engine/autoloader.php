@@ -14,7 +14,8 @@ class AutoLoad {
                 $this->classpath .= strtolower($element);
             }
         }
-        include_once '..' . DS . $this->classpath . ".php";
+//echo $this->classpath.'<br/>';
+        include_once BASE_PATH . DS . $this->classpath . ".php";
     }
 
 }

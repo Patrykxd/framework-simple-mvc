@@ -13,14 +13,14 @@ class SystemEngineLoad {
 
         $path = str_replace(DS, '/', $filePath);
 
-        $filePath = ".." . DS . "view" . DS . $path . ".php";
+        $filePath = BASE_PATH . DS . "view" . DS . $path . ".php";
 
         $this->load = NULL;
         if (file_exists($filePath)) {
             extract($variables);
 
             ob_start();
-            include $filePath;
+            include_once $filePath;
             $this->load = ob_get_contents();
             ob_get_clean();
         }
