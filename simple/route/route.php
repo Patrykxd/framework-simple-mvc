@@ -10,6 +10,8 @@ use SystemEngineRoute as Route;
 Route::get('/',                         'SystemCore',               'view');
 Route::get('/strona-glowna',            'SystemCore',               'view');
 Route::get('/welcome',                  'ControllerWelcomeWelcome', 'index');
+Route::get('/przyklad',                 'ControllerExampleExample', 'index');
+Route::get('/kontakt',                  'ControllerContactContakt', 'index');
 /**
  * Route::page_404();
  * zawsze jaki ostatni w routingu sprawdza czy strona istnieje

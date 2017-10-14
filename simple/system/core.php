@@ -14,7 +14,8 @@ class SystemCore {
         return SystemEngineLoad::view("frontend/includes/error404");
     }
 
-    public function view($body = array()) {
+    public function view($body = false) {
+       
         /**
          * LADOWANIE WIDOKOW
          * ladowanie widoków zmienna $body jesli jest pusta lub nie istanieje 
@@ -24,14 +25,13 @@ class SystemCore {
          */
         $data = array(
             'head' => SystemEngineLoad::view("frontend/includes/head"),
-            'body' => empty($body) ? SystemEngineLoad::view("frontend/includes/body") : $body,
+            'body' => ($body === false) ? SystemEngineLoad::view("frontend/includes/body") : $body,
             'footer' => SystemEngineLoad::view("frontend/includes/footer"),
         );
-        
+
         /**
          * zwracanie elementów strony do glownego index_view
          */
-        
         echo SystemEngineLoad::view("frontend/index_view", $data);
     }
 
