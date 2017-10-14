@@ -1,4 +1,4 @@
-<section style="min-height:74vh;">
+<section style="min-height: calc(100% - 169px);">
     <div class="container">
 
         <div class="row">
