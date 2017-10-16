@@ -2,30 +2,29 @@
 
 class SystemEngineLoad {
 
-    public $load;
 
     public function __construct() {
         
     }
 
-    public function view($filePath, $variables = array()) {
+    public static function view($filePath, $variables = array()) {
         $path = '';
 
         $path = str_replace(DS, '/', $filePath);
 
         $filePath = BASE_PATH . DS . "view" . DS . $path . ".php";
 
-        $this->load = NULL;
+        $load = NULL;
         if (file_exists($filePath)) {
             extract($variables);
 
             ob_start();
             include_once $filePath;
-            $this->load = ob_get_contents();
+            $load = ob_get_contents();
             ob_get_clean();
         }
 
-        return $this->load;
+        return $load;
     }
 
     public function model($filePath) {

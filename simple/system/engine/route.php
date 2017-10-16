@@ -19,7 +19,7 @@ class SystemEngineRoute {
         $_SERVER[$key] = $value;
     }
 
-    public function get($alias, $controller, $method) {
+    public static function get($alias, $controller, $method) {
 
 
         $current_url = self::parse();
@@ -32,7 +32,7 @@ class SystemEngineRoute {
         }
     }
 
-    public function page_404() {
+    public static function page_404() {
 
         $current_url = self::parse();
 

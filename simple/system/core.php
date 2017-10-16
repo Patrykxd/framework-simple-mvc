@@ -10,11 +10,11 @@ class SystemCore {
         
     }
 
-    public function error() {
+    public static function error() {
         return SystemEngineLoad::view("frontend/includes/error404");
     }
 
-    public function view($body = false) {
+    public static function view($body = false) {
        
         /**
          * LADOWANIE WIDOKOW
